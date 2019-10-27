@@ -1,10 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="AutomationLibrary\Commands\DockerCommands.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="AutomationLibrary\Commands\DockerCommands.txt" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="nunit" Version="3.12.0" />
@@ -12,10 +20,6 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="Selenium.WebDriver" Version="3.141.0" />
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="78.0.3904.7000" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\ClassLibrary\AutomationLibrary.csproj" />
   </ItemGroup>
 
 </Project>

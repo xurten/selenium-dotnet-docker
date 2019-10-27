@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace ClassLibrary.Pages
+namespace NUnitTestProject.Pages
 {
     public class SecurePage : BasePage
     {
