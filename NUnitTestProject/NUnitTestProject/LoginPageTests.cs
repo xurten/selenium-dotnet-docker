@@ -1,7 +1,9 @@
-using ClassLibrary.Pages;
 using NUnit.Framework;
+using NUnitTestProject.Pages;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using System.IO;
+using System.Reflection;
 
 namespace NUnitTestProject
 {
@@ -14,7 +16,11 @@ namespace NUnitTestProject
         [SetUp]
         public void Setup()
         {
-            driver = new ChromeDriver();
+            var chromeOptions = new ChromeOptions();
+            chromeOptions.AddArguments("headless");
+            chromeOptions.AddArguments("--no-sandbox");
+            chromeOptions.AddArguments("--disable-dev-shm-usage");
+            driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), chromeOptions);
         }
 
         [Test]
