@@ -24,7 +24,6 @@ RUN apt-get update && apt-get install -y \
  && rm -rf /var/lib/apt/lists/*
 # end install chrome
 COPY . .
-
 RUN dotnet restore NUnitTestProject/
 RUN dotnet test NUnitTestProject/ --logger=trx
 ENTRYPOINT dotnet test NUnitTestProject/ --logger=trx

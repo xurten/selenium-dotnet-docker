@@ -1,27 +1,13 @@
 using NUnit.Framework;
 using NUnitTestProject.Pages;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using System.IO;
-using System.Reflection;
+using NUnitTestProject.Tests;
 
 namespace NUnitTestProject
 {
-    public class LoginPageTests
+    public class LoginPageTests : BaseTest
     {
-        private IWebDriver driver;
         private const string successAlertMessage = "You logged into a secure area!";
         private const string headingMessage = "Secure Area";
-
-        [SetUp]
-        public void Setup()
-        {
-            var chromeOptions = new ChromeOptions();
-            chromeOptions.AddArguments("headless");
-            chromeOptions.AddArguments("--no-sandbox");
-            chromeOptions.AddArguments("--disable-dev-shm-usage");
-            driver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), chromeOptions);
-        }
 
         [Test]
         public void CheckLoginProcess()

@@ -3,7 +3,7 @@ services:
         hub:
                 image: selenium/hub:latest
                 ports:
-                        - "5555:5555"
+                        - "5050:5050"
         chrome:
                 image: selenium/node-chrome:latest
                 depends_on:
@@ -18,6 +18,6 @@ services:
                 environment:
                         - HUB_HOST=hub
         dotnet:
-                image : dotnetimage/tests
+                image : xurten/selenium-dotnet
                 volumes:
                     - ./TestResults:/build/NUnitTestProject/NUnitTestProject/TestResults
