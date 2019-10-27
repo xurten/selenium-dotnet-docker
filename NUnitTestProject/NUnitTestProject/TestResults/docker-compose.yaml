@@ -1,0 +1,23 @@
+version: "3"
+services:
+        hub:
+                image: selenium/hub:latest
+                ports:
+                        - "5555:5555"
+        chrome:
+                image: selenium/node-chrome:latest
+                depends_on:
+                        - hub
+                environment:
+                        - HUB_HOST=hub
+        firefox:
+                image: selenium/node-firefox:latest
+                shm_size: '1gb'
+                depends_on:
+                        - hub
+                environment:
+                        - HUB_HOST=hub
+        dotnet:
+                image : dotnetimage/tests
+                volumes:
+                    - ./TestResults:/build/NUnitTestProject/NUnitTestProject/TestResults
