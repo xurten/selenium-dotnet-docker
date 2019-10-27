@@ -2,7 +2,7 @@
 using OpenQA.Selenium.Support.UI;
 using System;
 
-namespace ClassLibrary.Pages
+namespace NUnitTestProject.Pages
 {
     public class BasePage
     {
