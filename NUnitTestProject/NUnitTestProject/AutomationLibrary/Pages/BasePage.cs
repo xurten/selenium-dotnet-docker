@@ -21,5 +21,10 @@ namespace NUnitTestProject.Pages
             return this;
         }
 
-    }
+        public BasePage SendKeys(By selector, string message)
+        {
+            KeyboardHelper.SendKeys(driver, selector, message);
+            return this;
+        }
+    }   
 }

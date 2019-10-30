@@ -29,6 +29,5 @@ namespace NUnitTestProject.AutomationLibrary.Pages.RemoveElements
             deletedButtonsCount = driver.FindElements(By.ClassName("added-manually")).Count;
             return this;
         }
-
     }
 }
