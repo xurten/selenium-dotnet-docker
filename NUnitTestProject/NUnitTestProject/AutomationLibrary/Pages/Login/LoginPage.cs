@@ -15,25 +15,19 @@ namespace NUnitTestProject.Pages
 
         public LoginPage SetUserName(string userName)
         {
-            var nameField = driver.FindElement(By.Id("username"));
-            nameField.Clear();
-            nameField.SendKeys(userName);
+            SendKeys(By.Id("username"), userName);
             return this;
         }
 
         public LoginPage SetUserPassword(string userPassword)
         {
-            var passwordField = driver.FindElement(By.Id("password"));
-            passwordField.Clear();
-            passwordField.SendKeys(userPassword);
+            SendKeys(By.Id("password"), userPassword);
             return this;
         }
 
-
         public SecurePage ClickLogin()
         {
-            driver.FindElement(By.XPath("//button[@class='radius']"))
-                .Click();
+            Click(By.XPath("//button[@class='radius']"));
             return new SecurePage(driver);
         }
     }

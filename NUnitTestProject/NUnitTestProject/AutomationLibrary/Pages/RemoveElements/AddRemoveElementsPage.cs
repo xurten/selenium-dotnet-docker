@@ -14,15 +14,13 @@ namespace NUnitTestProject.AutomationLibrary.Pages.RemoveElements
 
         public AddRemoveElementsPage ClickAddElement()
         {
-            driver.FindElement(By.XPath("//button[text()='Add Element']"))
-                .Click();
+            Click(By.XPath("//button[text()='Add Element']"));
             return this;
         }
 
         public AddRemoveElementsPage ClickDeleteElement()
         {
-            driver.FindElement(By.XPath("//button[@class='added-manually']"))
-                .Click();
+            Click(By.XPath("//button[@class='added-manually']"));
             return this;
         }
 
@@ -31,6 +29,5 @@ namespace NUnitTestProject.AutomationLibrary.Pages.RemoveElements
             deletedButtonsCount = driver.FindElements(By.ClassName("added-manually")).Count;
             return this;
         }
-
     }
 }
