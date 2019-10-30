@@ -15,5 +15,11 @@ namespace NUnitTestProject.Pages
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
         }
 
+        public BasePage Click(By selector, int timeout = 30000)
+        {
+            MouseHelper.Click(driver, selector, timeout);
+            return this;
+        }
+
     }
 }

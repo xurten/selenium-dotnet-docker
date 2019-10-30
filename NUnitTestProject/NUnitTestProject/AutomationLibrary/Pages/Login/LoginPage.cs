@@ -29,11 +29,9 @@ namespace NUnitTestProject.Pages
             return this;
         }
 
-
         public SecurePage ClickLogin()
         {
-            driver.FindElement(By.XPath("//button[@class='radius']"))
-                .Click();
+            Click(By.XPath("//button[@class='radius']"));
             return new SecurePage(driver);
         }
     }
