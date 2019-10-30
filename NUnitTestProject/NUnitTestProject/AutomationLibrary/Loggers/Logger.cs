@@ -23,6 +23,11 @@ namespace NUnitTestProject.AutomationLibrary.Loggers
             Log.Info(message);
         }
 
+        public void LogDebug(string message)
+        {
+            Log.Debug(message);
+        }
+
         public void LogFail(string message, Exception exception)
         {
             Log.Error(message, exception);
