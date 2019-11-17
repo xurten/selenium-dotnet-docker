@@ -21,7 +21,7 @@ namespace NUnitTestProject.Pages
 
         public BasePage Click(By selector, int timeout = 30000)
         {
-;           logger.LogInfo($"Click event with selector {selector} took {GetActionTime(() => MouseHelper.Click(driver, selector, timeout))}");
+            logger.LogInfo($"Click event with selector {selector} took {GetActionTime(() => MouseHelper.Click(driver, selector, timeout))}");
             return this;
         }
 

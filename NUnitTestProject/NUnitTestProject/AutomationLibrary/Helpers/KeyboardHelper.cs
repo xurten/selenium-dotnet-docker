@@ -5,7 +5,7 @@ using SeleniumExtras.WaitHelpers;
 
 namespace NUnitTestProject.AutomationLibrary.Helpers
 {
-    public class KeyboardHelper
+    public static class KeyboardHelper
     {
         public static void SendKeys(IWebDriver driver, By selector, string message, int timeout = 30000)
         {
