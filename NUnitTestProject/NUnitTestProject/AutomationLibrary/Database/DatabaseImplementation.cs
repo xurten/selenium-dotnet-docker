@@ -2,16 +2,17 @@
 
 namespace NUnitTestProject.AutomationLibrary.Database
 {
-    public class LogInformationDatabaseImplementation : IRepository<LogInformation>
+    public class LogInformationDatabaseImplementation : IRepository
     {
-        public void Add(LogInformation information)
+        public int Add(LogInformation information)
         {
             var sqlConnection = new SqlConnection(DatabaseCredentials.ConnectionString);
             sqlConnection.Open();
             var insertQuery = $"insert into LogInformation(LogDetails, LogDate) values ('{information.LogDetails}', {information.LogDate.ToString("MM/dd/yyyy").Replace('.','/')})";
             var insertCommand = new SqlCommand(insertQuery, sqlConnection);
-            insertCommand.ExecuteNonQuery();
+            var affectedRowCount = insertCommand.ExecuteNonQuery();
             sqlConnection.Close();
+            return affectedRowCount;
         }
     }
 }

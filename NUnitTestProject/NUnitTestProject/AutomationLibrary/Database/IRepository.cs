@@ -1,7 +1,7 @@
 ﻿namespace NUnitTestProject.AutomationLibrary.Database
 {
-    public interface IRepository<T>
+    public interface IRepository
     {
-        void Add(T data);
+        int Add(LogInformation data);
     }
 }

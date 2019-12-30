@@ -12,7 +12,7 @@ namespace NUnitTestProject.Pages
         protected IWebDriver driver;
         protected WebDriverWait wait;
         protected Logger logger;
-        protected IRepository<LogInformation> repository;
+        protected IRepository repository;
 
         public BasePage(IWebDriver driver)
         {
