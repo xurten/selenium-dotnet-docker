@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
+using NUnitTestProject.AutomationLibrary.Database;
 using NUnitTestProject.AutomationLibrary.Helpers;
 using NUnitTestProject.AutomationLibrary.Loggers;
 
@@ -11,17 +12,20 @@ namespace NUnitTestProject.Pages
         protected IWebDriver driver;
         protected WebDriverWait wait;
         protected Logger logger;
+        protected IRepository<LogInformation> repository;
 
         public BasePage(IWebDriver driver)
         {
             this.driver = driver;
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             logger = new Logger();
+            repository = new LogInformationDatabaseImplementation();
         }
 
         public BasePage Click(By selector, int timeout = 30000)
         {
             logger.LogInfo($"Click event with selector {selector} took {GetActionTime(() => MouseHelper.Click(driver, selector, timeout))}");
+            repository.Add(new LogInformation($"Click event with selector {selector.ToString().Replace('\'',' ')}"));
             return this;
         }
 
