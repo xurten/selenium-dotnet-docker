@@ -5,7 +5,7 @@ using SeleniumExtras.WaitHelpers;
 
 namespace NUnitTestProject.AutomationLibrary.Helpers
 {
-    public class MouseHelper
+    public static class MouseHelper
     {
         public static void Click(IWebDriver driver, By selector, int timeout)
         {

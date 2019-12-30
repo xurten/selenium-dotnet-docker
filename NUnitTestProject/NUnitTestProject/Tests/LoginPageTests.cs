@@ -1,8 +1,7 @@
 using NUnit.Framework;
 using NUnitTestProject.Pages;
-using NUnitTestProject.Tests;
 
-namespace NUnitTestProject
+namespace NUnitTestProject.Tests
 {
     public class LoginPageTests : BaseTest
     {
@@ -12,7 +11,7 @@ namespace NUnitTestProject
         [Test]
         public void CheckLoginProcess()
         {
-            LoginPage loginPage = new LoginPage(driver);
+            var loginPage = new LoginPage(driver);
             loginPage
                 .SetUserName(LoginPage.UserName)
                 .SetUserPassword(LoginPage.UserPassword)

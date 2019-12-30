@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build Jar') {
             steps {
-                bat "dotnet build .\NUnitTestProject\"
+                bat "dotnet build NUnitTestProject"
             }
         }
         stage('Build Image') {
